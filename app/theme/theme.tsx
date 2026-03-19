@@ -174,7 +174,7 @@ export function ThemeProvider({
 
   // Varsayılan tema
   const [activeTheme, setActiveTheme] =
-    useState<ThemeType>("pink")
+    useState<ThemeType>("gold")
 
   // Sayfa açıldığında localStorage'dan temayı yükler
   useEffect(() => {
