@@ -2,10 +2,10 @@ export const content = {
   salon: {
     shortName: "Service",
     name: "Hair Repair Studio",
-    slogan: "Sakarya'nın en güvenilir ve modern güzellik deneyimi.",
-    phone: "0530 630 67 91",
-    location: "Sakarya – Türkiye",
-    copyright: "© 2026 Filiz Güzellik Merkezi",
+    slogan: "İzmir'in en güvenilir ve modern güzellik deneyimi.",
+    phone: "0507 0008 90 22",
+    location: "İzmir – Türkiye",
+    copyright: "© Service Hair Repair Studio",
   },
 
   links: {
