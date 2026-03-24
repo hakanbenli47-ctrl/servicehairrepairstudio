@@ -1,12 +1,13 @@
 export const content = {
   salon: {
-    shortName: "Service",
-    name: "Hair Repair Studio",
-    slogan: "İzmir'in en güvenilir ve modern güzellik deneyimi.",
-    phone: "0507 0008 90 22",
-    location: "İzmir – Türkiye",
-    copyright: "© Service Hair Repair Studio",
-  },
+  shortName: "Service",
+  name: "Hair Repair Studio",
+  slogan: "İzmir'in en güvenilir ve modern güzellik deneyimi.",
+  phone: "05070089022",       // sadece arama için
+  whatsapp: "905070089022",   // WhatsApp için
+  location: "İzmir – Türkiye",
+  copyright: "© Service Hair Repair Studio",
+},
 
   links: {
     randevu: "/Servicehair",
@@ -20,10 +21,10 @@ export const content = {
   sections: {
     kampanyalarTitle: "Güncel Kampanyalar",
     hizmetlerTitle: "Hizmetlerimiz",
-    ekipTitle: "Uzman Ekibimiz",
+    ekipTitle: "Biz Kimiz?",
     galeriTitle: "Galeri",
     yorumlarTitle: "Müşteri Yorumları",
-    ctaTitle: "Randevu İçin Hazır Mısın?",
+    ctaTitle: "Sosyal Medya Hesaplarımız",
   },
 
   /* 3 KAMPANYA */
@@ -48,55 +49,51 @@ export const content = {
   /* 6 HİZMET */
   hizmetler: [
     {
-      title: "Saç Tasarım",
+      title: "kişiye özel saç kesim Saç Tasarım",
       desc: "Saç kesimi, renklendirme, ombre, sombre ve profesyonel şekillendirme.",
       img: "/sac.jpg",
     },
     {
-      title: "Cilt Bakımı",
+      title: " kişiye özel saç reklendirme servisleri ",
       desc: "Hydrafacial, leke bakımı, anti-aging uygulamalar.",
       img: "/cilt.jpg",
     },
     {
-      title: "Lazer Epilasyon",
+      title: "saç bakım ürünleri ",
       desc: "Son teknoloji cihazlarla güvenli ve konforlu uygulama.",
       img: "/lazer.jpg",
     },
     {
-      title: "Kalıcı Makyaj",
+      title: "kaş tasarım",
       desc: "Microblading, dudak renklendirme ve eyeliner uygulamaları.",
       img: "/makyaj.jpg",
     },
     {
-      title: "Protez Tırnak",
+      title: "manikür pedikür hizmetleri ",
       desc: "Jel tırnak, kalıcı oje ve nail art tasarımları.",
       img: "/tirnak.jpg",
     },
     {
-      title: "Bölgesel Zayıflama",
+      title: "Saç Bakımı",
       desc: "Kavitasyon ve sıkılaştırma uygulamaları.",
+      img: "/zayiflama.jpg",
+    },
+     {
+      title: " özel gün saçları",
+      desc: "düğün, nişan, mezuniyetinizde saçlarınızı bize emanet edebilirsiniz.",
       img: "/zayiflama.jpg",
     },
   ],
 
   /* 3 ÇALIŞAN */
-  ekip: [
-    {
-      name: "Mehmet",
-      role: "Profesyonel Uzman",
-      img: "/person1.jpg",
-    },
-    {
-      name: "Ayşe",
-      role: "Profesyonel Uzman",
-      img: "/person2.jpg",
-    },
-    {
-      name: "Elif",
-      role: "Profesyonel Uzman",
-      img: "/person3.jpg",
-    },
-  ],
+ ekip: [
+  {
+    name: "Kutay Su",
+    role: "İşletme Sahibi & Saç Tasarım Uzmanı",
+    img: "/person1.jpg",  // public klasörüne ekle
+    bio: "Kutay Su, 13 yıldır saç tasarımı ve güzellik sektöründe uzmanlaşmış bir profesyoneldir. Modern teknikler ve kişiye özel çözümlerle müşterilerine eşsiz deneyimler sunar. İzmir’de birçok başarılı projeye imza atmış ve sektörde kendini kanıtlamış bir isimdir."
+  }
+],
 
   /* 8 GALERİ FOTOĞRAFI */
   galeri: [
