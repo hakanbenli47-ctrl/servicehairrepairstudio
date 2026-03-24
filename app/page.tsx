@@ -50,7 +50,7 @@ function Header() {
         </div>
 
         <nav className={`hidden lg:flex space-x-10 text-[11px] font-bold uppercase tracking-widest ${scrolled ? theme.headerText : "text-white"}`}>
-          {["hizmetler", "deneyim", "ekip", "yorumlar"].map((item) => (
+          {["hizmetler", "deneyim", "KutaySu Kimdir?", "yorumlar"].map((item) => (
             <a key={item} href={`#${item}`} className="hover:opacity-50 transition-opacity">
               {item === "yorumlar" ? "Yorumlar" : item === "deneyim" ? "Neden Biz?" : item}
             </a>
