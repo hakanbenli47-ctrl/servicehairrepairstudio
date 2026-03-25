@@ -152,27 +152,38 @@ export default function Home() {
       </section>
 
       {/* --- HİZMETLER --- */}
-      <section id="hizmetler" className="py-24 md:py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-center md:text-left">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none mb-6">
-              Hizmet <br /> <span className="opacity-20">Sanatımız</span>
-            </h2>
+     <section id="hizmetler" className="py-24 md:py-32 px-6">
+  <div className="max-w-7xl mx-auto">
+    <div className="mb-16 text-center md:text-left">
+      <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none mb-6">
+        Hizmet <br /> <span className="opacity-20">Sanatımız</span>
+      </h2>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {content.hizmetler.map((item, i) => (
+        <motion.div 
+          key={i} 
+          whileHover={{ y: -8 }} 
+          className={`group relative h-[400px] md:h-[500px] overflow-hidden rounded-2xl ${theme.card}`}
+        >
+          <img 
+            src={item.img} 
+            className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100" 
+            alt={item.title} 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 p-4 md:p-8 w-full text-white">
+            <h3 className="text-xl md:text-2xl font-bold uppercase mb-2">{item.title}</h3>
+            {/* Mobilde her zaman görünür, desktop hover ile */}
+            <p className="text-[10px] md:text-xs opacity-100 md:opacity-0 md:group-hover:opacity-80 transition-opacity duration-500 max-w-full">
+              {item.desc}
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {content.hizmetler.map((item, i) => (
-              <motion.div key={i} whileHover={{ y: -8 }} className={`group relative h-[400px] md:h-[500px] overflow-hidden rounded-2xl ${theme.card}`}>
-                <img src={item.img} className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-110 opacity-70 group-hover:opacity-100" alt={item.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-8 text-white">
-                  <h3 className="text-xl md:text-2xl font-bold uppercase mb-2">{item.title}</h3>
-                  <p className="text-[10px] md:text-xs opacity-0 group-hover:opacity-80 transition-opacity duration-500 max-w-[250px]">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* --- EKİP --- */}
       <section id="ekip" className={`py-24 md:py-32 px-6 ${theme.sectionAlt}`}>
