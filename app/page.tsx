@@ -226,18 +226,36 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1,2,3].map((_, i) => (
-              <motion.div key={i} whileHover={{ y: -5 }} className={`${theme.card} p-8 rounded-3xl border border-white/5`}>
-                <p className="text-sm opacity-70 italic mb-6 leading-relaxed">"Harika bir servis ve profesyonel yaklaşım. İzmir'de saçımı emanet edebildiğim tek yer burası oldu."</p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs">M{i+1}</div>
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest">Müşteri İsmi</h4>
-                    <span className="text-[10px] opacity-40">Google Yorumu</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+           {[
+  {
+    name: "Elif A.",
+    topic: "",
+    comment: "Düğünüm için gelin başımı yaptırdım ve sonuç inanılmazdı! Her detay özenle düşünüldü, saçım gün boyu kusursuz kaldı. Kesinlikle tavsiye ediyorum!"
+  },
+  {
+    name: "Seda K.",
+    topic: "",
+    comment: "Saçımı boyattım ve rengi tam istediğim gibi oldu. Boyama sırasında saçım zarar görmedi ve tonlama mükemmel. Renk kalıcı ve parlak!"
+  },
+  {
+    name: "Derya M.",
+    topic: "",
+    comment: "İlk kez saç kesimi yaptırdım ve sonuç harikaydı. Kuaför saç yapımı çok iyi anlayıp tam istediğim modeli verdi. Çok memnun kaldım!"
+  }
+].map((item, i) => (
+  <motion.div key={i} whileHover={{ y: -5 }} className={`${theme.card} p-8 rounded-3xl border border-white/5`}>
+    <p className="text-sm opacity-70 italic mb-6 leading-relaxed">"{item.comment}"</p>
+    <div className="flex items-center space-x-4">
+      <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs">
+        {item.name.charAt(0)}
+      </div>
+      <div>
+        <h4 className="text-xs font-bold uppercase tracking-widest">{item.name}</h4>
+        <span className="text-[10px] opacity-40">{item.topic} Yorumu</span>
+      </div>
+    </div>
+  </motion.div>
+))}
           </div>
         </div>
       </section>
