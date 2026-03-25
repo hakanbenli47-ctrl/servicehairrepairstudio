@@ -1,11 +1,11 @@
 export const content = {
   salon: {
-  shortName: "Service",
-  name: "Hair Repair Studio",
+  shortName: "Servıce",
+   name: "Haır Repaır Studıo",
   slogan: "İzmir'in en güvenilir ve modern güzellik deneyimi.",
   phone: "05070089022",       // sadece arama için
   whatsapp: "905070089022",   // WhatsApp için
-  location: "İzmir – Türkiye",
+  location: "İzmir Güzelbahçe – Türkiye",
   copyright: "© Service Hair Repair Studio",
 },
 

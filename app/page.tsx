@@ -50,9 +50,9 @@ function Header() {
         </div>
 
         <nav className={`hidden lg:flex space-x-10 text-[11px] font-bold uppercase tracking-widest ${scrolled ? theme.headerText : "text-white"}`}>
-          {["hizmetler", "deneyim", "KutaySu Kimdir?", "yorumlar"].map((item) => (
+          {["hizmetler", "deneyim", "ekip", "yorumlar"].map((item) => (
             <a key={item} href={`#${item}`} className="hover:opacity-50 transition-opacity">
-              {item === "yorumlar" ? "Yorumlar" : item === "deneyim" ? "Neden Biz?" : item}
+              {item === "yorumlar" ? "Yorumlar" : item === "deneyim" ? "Neden Biz?" : item === "ekip" ? "Ekibimiz" : item}
             </a>
           ))}
         </nav>
@@ -73,42 +73,61 @@ export default function Home() {
     <main className={`${theme.bg} selection:bg-yellow-500 selection:text-black overflow-x-hidden`}>
       <Header />
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-          style={{ backgroundImage: `url(${content.hero.image})` }}
-          className="absolute inset-0 bg-cover bg-center"
-        />
-        <div className={`absolute inset-0 ${theme.heroOverlay} backdrop-blur-[1px]`} />
+     {/* --- HERO SECTION --- */}
+<section className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
+  {/* Arka plan */}
+  <motion.div 
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 1.5 }}
+    style={{ backgroundImage: `url(${content.hero.image})` }}
+    className="absolute inset-0 bg-cover bg-center"
+  />
+  <div className={`absolute inset-0 ${theme.heroOverlay} backdrop-blur-[1px]`} />
 
-        <motion.div variants={staggerContainer} initial="hidden" animate="show" className="relative z-10 text-center px-6">
-          <motion.span variants={fadeInUp} className="block text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 text-white/80">
-            {content.salon.location}
-          </motion.span>
-          <motion.h1 variants={fadeInUp} className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white uppercase leading-tight">
-            {content.salon.name}
-          </motion.h1>
-          <motion.p variants={fadeInUp} className="max-w-xl mx-auto text-sm md:text-lg text-white/70 font-light leading-relaxed mb-10">
-            {content.salon.slogan}
-          </motion.p>
+  {/* Hero İçerik */}
+  <motion.div variants={staggerContainer} initial="hidden" animate="show" className="relative z-10 text-center px-6 flex flex-col items-center justify-center h-full">
+    
+    {/* Konum */}
+    <motion.span variants={fadeInUp} className="block text-[10px] md:text-xs uppercase tracking-[0.5em] mb-4 text-white/80">
+      {content.salon.location}
+    </motion.span>
+    
+    {/* Başlık: Service üstte, Hair Repair Studio altta */}
+    <motion.h1 variants={fadeInUp} className="text-5xl md:text-8xl font-black mb-4 tracking-tighter text-white uppercase leading-tight whitespace-pre-line text-center">
+      {content.salon.shortName}{"\n"}{content.salon.name}
+    </motion.h1>
 
-          <motion.div variants={fadeInUp} className="relative inline-block">
-            <button onClick={() => setShowContact(!showContact)} className={`${theme.button} px-10 py-4 md:px-12 md:py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-2xl`}>
-              Randevu Al
-            </button>
-            {showContact && (
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="absolute top-full mt-4 w-full space-y-2 z-20">
-                <a href={`tel:${content.salon.phone}`} className="block bg-white text-black py-3 rounded-full text-[10px] font-bold">TELEFON</a>
-                <a href={`https://wa.me/${content.salon.whatsapp}`} className="block bg-[#25D366] text-white py-3 rounded-full text-[10px] font-bold">WHATSAPP</a>
-              </motion.div>
-            )}
-          </motion.div>
+    {/* Slogan */}
+    <motion.p variants={fadeInUp} className="max-w-xl text-center mx-auto text-sm md:text-lg text-white/70 font-light leading-relaxed mb-10">
+      {content.salon.slogan}
+    </motion.p>
+
+    {/* Randevu Butonu */}
+    <motion.div variants={fadeInUp} className="relative inline-block">
+      <button onClick={() => setShowContact(!showContact)} className={`${theme.button} px-10 py-4 md:px-12 md:py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] shadow-2xl`}>
+        Randevu Al
+      </button>
+      {showContact && (
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="absolute top-full mt-4 w-full space-y-2 z-20">
+          <a href={`tel:${content.salon.phone}`} className="block bg-white text-black py-3 rounded-full text-[10px] font-bold">TELEFON</a>
+          <a href={`https://wa.me/${content.salon.whatsapp}`} className="block bg-[#25D366] text-white py-3 rounded-full text-[10px] font-bold">WHATSAPP</a>
         </motion.div>
-      </section>
-
+      )}
+    </motion.div>
+  </motion.div>
+</section>
+{/* --- KONUM --- */}
+<section className="w-full h-[400px] md:h-[500px] relative">
+  <iframe
+    src="https://www.google.com/maps?q=Service+hair,+Maltepe,+Mithatpa%C5%9Fa+Cd.+225/b,+35310+G%C3%BCzelbah%C3%A7e/%C4%B0zmir&output=embed"
+    className="w-full h-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Service Hair Konum"
+  ></iframe>
+</section>
       {/* --- DENEYİM --- */}
       <section id="deneyim" className={`py-24 md:py-32 px-6 md:px-12 ${theme.sectionSoft}`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-24 items-center">
@@ -183,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- GOOGLE YORUMLAR (YENİ) --- */}
+      {/* --- GOOGLE YORUMLAR --- */}
       <section id="yorumlar" className={`py-24 md:py-32 px-6 ${theme.sectionSoft}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -212,7 +231,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- SOSYAL MEDYA (GÜNCELLENMİŞ İKONLAR) --- */}
+      {/* --- SOSYAL MEDYA --- */}
       <section className={`py-16 md:py-20 px-6 ${theme.ctaBg} relative overflow-hidden border-t border-white/5`}>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -224,7 +243,7 @@ export default function Home() {
               className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 flex items-center space-x-6 group border border-white/5 transition-colors hover:bg-black/30"
             >
               <div className={`${theme.ctaText} flex-shrink-0`}>
-                <svg className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -244,7 +263,7 @@ export default function Home() {
               className="bg-black/20 backdrop-blur-sm rounded-3xl p-8 flex items-center space-x-6 group border border-white/5 transition-colors hover:bg-black/30"
             >
               <div className={`${theme.ctaText} flex-shrink-0`}>
-                <svg className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
