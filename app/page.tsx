@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useTheme } from "@/app/theme/theme"
 import { content } from "@/data/content"
 import { FaInstagram } from "react-icons/fa"
+import { FaMapMarkerAlt } from "react-icons/fa"
 /* --- ZARİF ANİMASYONLAR --- */
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -272,6 +273,19 @@ export default function Home() {
               <a href={`https://wa.me/${content.salon.whatsapp}`} target="_blank" rel="noreferrer" className="text-xs uppercase font-bold tracking-widest hover:opacity-60 transition flex items-center">
                 WhatsApp İle Ulaşın <span className="ml-2">↗</span>
               </a>
+              <a 
+  href="https://maps.app.goo.gl/Y8anTCsEbc7DGK7q9?g_st=ic" 
+  target="_blank" 
+  rel="noreferrer"
+  className="group text-xs uppercase font-bold tracking-widest flex items-center gap-2 transition"
+>
+
+  <FaMapMarkerAlt className="text-sm transition-transform duration-300 group-hover:scale-110 group-hover:text-red-500" />
+
+<span className="group-hover:translate-x-1 transition-transform duration-300">
+  Haritada Aç
+</span>
+</a>
             <a 
   href="https://instagram.com/kutaysuofficial" 
   target="_blank" 
