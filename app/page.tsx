@@ -142,7 +142,58 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* --- SAÇ TASARIM GALERİSİ --- */}
+<section className={`py-32 px-6 ${theme.bg}`}>
+  <div className="max-w-7xl mx-auto">
+    
+    <motion.div 
+      initial="hidden" 
+      whileInView="show" 
+      viewport={{ once: true }} 
+      variants={fadeInUp} 
+      className="text-center mb-20"
+    >
+      <h2 className={`${theme.title} text-4xl md:text-5xl font-light tracking-tight`}>
+        Dokunuşlarımız <span className="font-serif italic text-5xl md:text-6xl">Konuşuyor</span>
+      </h2>
+      <p className={`${theme.subtitle} mt-6 text-sm md:text-base max-w-xl mx-auto`}>
+        Gerçek müşteriler, gerçek sonuçlar. Her saç bir imza.
+      </p>
+    </motion.div>
 
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+      {[
+        "/gorsel1.jpg",
+        "/gorsel2.jpg",
+        "/gorsel3.jpg",
+        "/gorsel4.jpg",
+        "/gorsel5.jpg",
+        "/gorsel6.jpg",
+        "/gorsel7.jpg",
+        "/gorsel8.jpg",
+        "/gorsel9.jpg",
+        "/gorsel10.jpg",
+        "/gorsel11.jpg",
+      ].map((src, i) => (
+        <div 
+          key={i} 
+          className="relative overflow-hidden group aspect-square"
+        >
+          <img 
+            src={src} 
+            alt={`Saç Tasarım ${i + 1}`} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition duration-500" />
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
       {/* --- HİZMETLERİMİZ (SPA / MENÜ STİLİ) --- */}
       <section id="hizmetler" className={`py-32 px-6 ${theme.sectionAlt}`}>
         <div className="max-w-7xl mx-auto">
@@ -199,7 +250,11 @@ export default function Home() {
               {content.ekip.map((member, i) => (
                 <div key={i} className="flex flex-col items-center max-w-sm">
                   <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-8 border border-black/5 p-2 bg-white/5">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700" />
+                    <img 
+  src={member.img} 
+  alt={member.name} 
+  className="w-full h-full object-cover rounded-full transition-all duration-700" 
+/>
                   </div>
                   <h3 className={`${theme.title} text-2xl font-light uppercase tracking-wider mb-2`}>{member.name}</h3>
                   <p className={`${theme.subtitle} text-xs font-bold uppercase tracking-widest mb-6`}>{member.role}</p>

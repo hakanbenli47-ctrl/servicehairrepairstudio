@@ -47,44 +47,43 @@ export const content = {
   ],
 
   /* 6 HİZMET */
-  hizmetler: [
-    {
-      title: "kişiye özel saç kesim Saç Tasarım",
-      desc: "Saç kesimi, renklendirme, ombre, sombre ve profesyonel şekillendirme.",
-      img: "/sac.jpg",
-    },
-    {
-      title: " kişiye özel saç reklendirme servisleri ",
-      desc: "Hydrafacial, leke bakımı, anti-aging uygulamalar.",
-      img: "/cilt.jpg",
-    },
-    {
-      title: "saç bakım ürünleri ",
-      desc: "Son teknoloji cihazlarla güvenli ve konforlu uygulama.",
-      img: "/lazer.jpg",
-    },
-    {
-      title: "kaş tasarım",
-      desc: "Microblading, dudak renklendirme ve eyeliner uygulamaları.",
-      img: "/makyaj.jpg",
-    },
-    {
-      title: "manikür pedikür hizmetleri ",
-      desc: "Jel tırnak, kalıcı oje ve nail art tasarımları.",
-      img: "/tirnak.jpg",
-    },
-    {
-      title: "Saç Bakımı",
-      desc: "Kavitasyon ve sıkılaştırma uygulamaları.",
-      img: "/zayiflama.jpg",
-    },
-     {
-      title: " özel gün saçları",
-      desc: "düğün, nişan, mezuniyetinizde saçlarınızı bize emanet edebilirsiniz.",
-      img: "/zayiflama.jpg",
-    },
-  ],
-
+hizmetler: [
+  {
+    title: "kişiye özel saç kesim Saç Tasarım",
+    desc: "Yüz hatlarınıza ve saç yapınıza özel profesyonel kesim, modern saç tasarımı ve günlük kullanımda kolay şekil alabilen stil uygulamaları.",
+    img: "/sac.jpg",
+  },
+  {
+    title: " kişiye özel saç reklendirme servisleri ",
+    desc: "Saçınıza zarar vermeden uygulanan ombre, sombre, röfle ve özel renk geçişleri ile size en uygun tonları profesyonel tekniklerle sunuyoruz.",
+    img: "/cilt.jpg",
+  },
+  {
+    title: "saç bakım ürünleri ",
+    desc: "Saç tipinize uygun profesyonel bakım ürünleri ve onarıcı kürler ile yıpranmış saçları güçlendiren, parlaklık ve canlılık kazandıran uygulamalar.",
+    img: "/lazer.jpg",
+  },
+  {
+    title: "kaş tasarım",
+    desc: "Yüzünüze en uygun kaş formunu belirleyerek doğal, simetrik ve estetik bir görünüm sağlayan profesyonel kaş tasarım uygulamaları.",
+    img: "/makyaj.jpg",
+  },
+  {
+    title: "manikür pedikür hizmetleri ",
+    desc: "Hijyenik ortamda yapılan klasik ve kalıcı manikür pedikür uygulamaları ile bakımlı ve estetik eller ve ayaklar.",
+    img: "/tirnak.jpg",
+  },
+  {
+    title: "Saç Bakımı",
+    desc: "Yoğun nem, keratin ve onarıcı bakım uygulamaları ile yıpranmış saçları yenileyen, güçlendiren ve sağlıklı görünüm kazandıran profesyonel bakım.",
+    img: "/zayiflama.jpg",
+  },
+  {
+    title: " özel gün saçları",
+    desc: "Düğün, nişan ve özel davetleriniz için size en çok yakışacak saç tasarımı ile kusursuz ve kalıcı görünümler oluşturuyoruz.",
+    img: "/zayiflama.jpg",
+  },
+],
   /* 3 ÇALIŞAN */
  ekip: [
   {
