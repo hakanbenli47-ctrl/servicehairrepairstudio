@@ -74,23 +74,38 @@ export default function Home() {
       <Header />
 
       {/* --- HERO SECTION (Ferah ve Şık) --- */}
-      <section className="relative h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+      <section className="relative h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden">
+  
+  {/* ARKA PLAN GÖRSEL */}
+<motion.div 
+  className="absolute inset-0 z-0"
+  animate={{ scale: [1, 1.1, 1] }}
+  transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+>
+  <img 
+    src="/salon1.jpg" 
+    alt="Salon" 
+    className="w-full h-full object-cover"
+  />
+
+ <div className="absolute inset-0 bg-black/50"></div>
+</motion.div>
         <motion.div 
           variants={staggerContainer} 
           initial="hidden" 
           animate="show" 
           className="max-w-4xl mx-auto z-10"
         >
-          <motion.p variants={fadeInUp} className={`${theme.subtitle} text-xs md:text-sm uppercase tracking-[0.4em] mb-6 font-medium`}>
+         <motion.p variants={fadeInUp} className="text-white text-xs md:text-sm uppercase tracking-[0.4em] mb-6 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             {content.salon.location}
           </motion.p>
           
-          <motion.h1 variants={fadeInUp} className={`${theme.title} text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight leading-tight`}>
+         <motion.h1 variants={fadeInUp} className={`${theme.title} text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]`}>
             Güzelliğinize <br />
             <span className="font-serif italic text-4xl md:text-6xl lg:text-7xl">Değer Katıyoruz</span>
           </motion.h1>
 
-          <motion.p variants={fadeInUp} className={`${theme.subtitle} max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed mb-10`}>
+       <motion.p variants={fadeInUp} className="text-white/90 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed mb-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             {content.salon.slogan}
           </motion.p>
 
@@ -121,9 +136,10 @@ export default function Home() {
       <section id="hakkimizda" className={`py-24 px-6 ${theme.sectionSoft}`}>
         <div className="max-w-6xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className={`${theme.title} text-3xl md:text-4xl font-serif italic mb-6`}>Kendinize Vakit Ayırın</h2>
+            <h2 className={`${theme.title} text-3xl md:text-4xl font-serif italic mb-6`}>Service Hair</h2>
             <p className={`${theme.subtitle} text-lg leading-relaxed font-light`}>
-              Modern dokunuşlar, profesyonel ekipmanlar ve alanında uzman kadromuzla saçınıza ve cildinize en uygun bakımı sunuyoruz. Kaliteden ödün vermeden, size özel bir deneyim tasarlıyoruz.
+             Kişiye özel tasarlanmış  saç stillerini buluşturan Yenilikleri takip eden ve öncü olan bir kuaför markası.
+En doğru seçimlerin adresiyiz.
             </p>
           </motion.div>
 
